@@ -1,6 +1,10 @@
 {
   "compilerOptions": {
-    "lib": ["dom", "dom.iterable", "esnext"],
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
@@ -18,9 +22,66 @@
       }
     ],
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": [
+        "./src/*"
+      ],
+      "@packages/*": [
+        "./src/packages/*"
+      ],
+      "@packages": [
+        "./src/packages/index"
+      ],
+      "@design/*": [
+        "./src/packages/design/*"
+      ],
+      "@design": [
+        "./src/packages/design/index"
+      ],
+      "@icons/*": [
+        "./src/packages/icons/*"
+      ],
+      "@icons": [
+        "./src/packages/icons/index"
+      ],
+      "@helpers/*": [
+        "./src/packages/helpers/*"
+      ],
+      "@helpers": [
+        "./src/packages/helpers/index"
+      ],
+      "@configs/*": [
+        "./src/packages/configs/*"
+      ],
+      "@configs": [
+        "./src/packages/configs/index"
+      ],
+      "@system/*": [
+        "./src/packages/system/*"
+      ],
+      "@system": [
+        "./src/packages/system/index"
+      ],
+      "@api/*": [
+        "./src/packages/api/*"
+      ],
+      "@api": [
+        "./src/packages/api/index"
+      ],
+      "@routes/*": [
+        "./src/packages/routes/*"
+      ],
+      "@routes": [
+        "./src/packages/routes/index"
+      ]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
-  "exclude": ["node_modules"]
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
 }

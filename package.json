@@ -6,19 +6,39 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "test": "",
+    "prepare": "husky",
+    "commit": "git add -A & cz",
+    "release": "release-it",
+    "docker:build": "docker build -t covid-test-docker .",
+    "docker:start": "docker run -p 3000:3000 covid-test-docker"
   },
   "dependencies": {
+    "i18next": "^23.12.2",
+    "i18next-resources-to-backend": "^1.2.1",
+    "next": "14.2.5",
+    "next-i18n-router": "^5.5.1",
+    "next-i18next": "^15.3.1",
     "react": "^18",
     "react-dom": "^18",
-    "next": "14.2.5"
+    "react-i18next": "^15.0.0"
   },
   "devDependencies": {
-    "typescript": "^5",
+    "@commitlint/cli": "^19.3.0",
+    "@commitlint/config-conventional": "^19.2.2",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
+    "cz-conventional-changelog": "^3.3.0",
     "eslint": "^8",
-    "eslint-config-next": "14.2.5"
+    "eslint-config-next": "14.2.5",
+    "husky": "^9.1.4",
+    "typescript": "^5"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   }
 }
