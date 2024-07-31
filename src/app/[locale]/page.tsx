@@ -1,8 +1,10 @@
 import { initTranslations } from "@/packages/configs";
+import { Button } from "@mui/material";
 
 export default async function Home({ params: { locale } }: { params: { locale: string } }) {
-  console.log({ locale });
   const { t } = await initTranslations(locale, ['default']);
 
-  return (<h1>hello{t("hi")}</h1>);
+  return (
+    <Button>hello{t("hi")}</Button>
+  );
 }

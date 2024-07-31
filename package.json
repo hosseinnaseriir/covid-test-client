@@ -15,6 +15,11 @@
     "docker:start": "docker run -p 3000:3000 covid-test-docker"
   },
   "dependencies": {
+    "@emotion/cache": "^11.13.1",
+    "@emotion/react": "^11.13.0",
+    "@emotion/styled": "^11.13.0",
+    "@mui/material": "^5.16.6",
+    "@mui/material-nextjs": "^5.16.6",
     "i18next": "^23.12.2",
     "i18next-resources-to-backend": "^1.2.1",
     "next": "14.2.5",

@@ -1,3 +1,6 @@
+import { theme } from "@/packages/design";
+import { Experimental_CssVarsProvider, experimental_extendTheme } from "@mui/material";
+import { AppRouterCacheProvider } from "@mui/material-nextjs/v13-appRouter";
 import type { Metadata } from "next";
 import { Inter } from 'next/font/google'
 
@@ -15,7 +18,13 @@ export default function RootLayout({
   return (
     <html lang="en" className="-dark-theme">
       <body className={`${inter.className}`}>
-        {children}
+        <AppRouterCacheProvider
+
+        >
+          <Experimental_CssVarsProvider theme={theme}>
+            {children}
+          </Experimental_CssVarsProvider>
+        </AppRouterCacheProvider>
       </body>
     </html>
   );
