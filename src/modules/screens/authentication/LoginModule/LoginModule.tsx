@@ -1,17 +1,16 @@
-// 'use client'
-// import { ROUTES } from '@app';
+'use client'
 import { Body2, Box, Button, Divider, H1, InputText, PasswordField } from '@design';
 
-// import { useLoginModule } from './hooks';
+import { useLoginModule } from './hooks';
 
 const LoginModule = () => {
-    //   const { register, onSubmitLogin, isValid, errors, isPending, loginByGoogle } =
-    //     useLoginModule();
+    const { register, onSubmitLogin, isValid, errors, isPending } =
+        useLoginModule();
 
     return (
         <Box
             component='form'
-            //   onSubmit={onSubmitLogin}
+            onSubmit={onSubmitLogin}
             sx={{
                 flex: 1,
                 display: 'flex',
@@ -23,16 +22,16 @@ const LoginModule = () => {
         >
             <H1 sx={{ pt: 1, pb: 2, mx: 'auto' }}>Welcome Back!</H1>
             <InputText
-                // error={!!errors.username?.message}
-                // helperText={errors.username?.message}
-                // {...register('username')}
+                error={!!errors.username?.message}
+                helperText={errors.username?.message}
+                {...register('username')}
                 type='username'
                 label='Username or Phone Number'
             />
             <PasswordField
-                // error={!!errors.password?.message}
-                // helperText={errors.password?.message}
-                // validation={register('password')}
+                error={!!errors.password?.message}
+                helperText={errors.password?.message}
+                validation={register('password')}
                 label='Password'
             />
             <Box
@@ -43,9 +42,9 @@ const LoginModule = () => {
                 }}
             >
                 <Button
-                    //   disabled={isValid}
+                    disabled={isValid}
                     type='submit'
-                    //   loading={isPending}
+                    loading={isPending}
                     variant='contained'
                     color='primary'
                 >
@@ -65,7 +64,6 @@ const LoginModule = () => {
             </Box>
 
             <Button
-                // onClick={() => loginByGoogle()}
                 color='primary'
                 variant='outlined'
             >
