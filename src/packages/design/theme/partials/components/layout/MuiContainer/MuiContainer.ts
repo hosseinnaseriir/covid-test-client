@@ -1,3 +1,5 @@
+'use client'
+
 import type { Components, ContainerProps } from '@mui/material';
 
 import { StylePropsType } from '@/packages/design/theme/types';

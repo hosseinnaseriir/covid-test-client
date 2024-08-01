@@ -31,6 +31,12 @@
       "@packages": [
         "./src/packages/index"
       ],
+      "@assets/*": [
+        "./src/packages/assets/*"
+      ],
+      "@assets": [
+        "./src/packages/assets/index"
+      ],
       "@design/*": [
         "./src/packages/design/*"
       ],

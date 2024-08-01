@@ -9,10 +9,6 @@ declare module '@mui/material' {
     };
   }
 
-  export type Palette = CustomPalette;
-
-  export type PaletteOptions = CustomPalette;
-
   export interface PaletteColor {
     lighter: string;
     darker: string;

@@ -1,6 +1,6 @@
 'use client'
 
-import { components, darkPalette, lightPalette, typography } from '@design';
+import { components, darkPalette, lightPalette, typography } from '@design/theme';
 import { experimental_extendTheme } from "@mui/material";
 
 
@@ -13,6 +13,6 @@ export const theme = experimental_extendTheme({
       palette: darkPalette ?? {}
     }
   },
-  components,
+  components: components ?? {},
   typography
 });

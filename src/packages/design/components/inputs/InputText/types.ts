@@ -1,5 +1,7 @@
 import type { ReactNode } from 'react';
-import type { TextFieldProps as MuiTextFieldProps } from '@mui/material';
+import { UseFormRegisterReturn } from 'react-hook-form';
+
+import type { MuiTextFieldProps, SxProps } from '@design';
 
 export interface InputTextProps
   extends Pick<
@@ -11,6 +13,10 @@ export interface InputTextProps
   disabled?: boolean;
   error?: MuiTextFieldProps['error'];
   variant?: 'outlined' | 'filled';
-  helperText?: ReactNode | string;
+  helperText?: string;
   type?: MuiTextFieldProps['type'];
+  requiredStar?: boolean;
+  information?: ReactNode;
+  parentSx?: SxProps;
+  validation?: UseFormRegisterReturn<any>;
 }

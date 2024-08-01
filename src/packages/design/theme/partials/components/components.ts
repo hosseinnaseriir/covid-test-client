@@ -2,10 +2,11 @@ import { Components } from '@mui/material';
 
 import {
   MuiButton,
-  MuiCheckbox,
   MuiFormHelperText,
   MuiInputLabel,
   MuiTextField,
+  MuiSelect,
+  MuiFormControlLabel
 } from './inputs';
 import { MuiContainer } from './layout';
 
@@ -14,6 +15,7 @@ export const components: Components = {
   MuiInputLabel,
   MuiButton,
   MuiContainer,
-  MuiCheckbox,
   MuiFormHelperText,
+  MuiFormControlLabel,
+  MuiSelect
 };
