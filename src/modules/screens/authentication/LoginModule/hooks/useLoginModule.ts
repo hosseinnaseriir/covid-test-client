@@ -5,7 +5,7 @@ import { z } from 'zod';
 
 import { useRouter } from 'next/navigation';
 import { createRegex } from '@/packages/helpers';
-import { useVerifyUser } from '@/packages/api/services/auth';
+import { useVerifyUser } from '@/packages/api/services/authentication/loginService';
 
 const PASSWORD_REG = createRegex('password');
 const LOGIN_SCHEMA = z.object({

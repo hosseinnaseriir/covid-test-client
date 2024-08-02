@@ -22,10 +22,10 @@ const RegisterModule = ({ locales }: { locales: { [key: string]: string; } }) =>
         >
             <H1 sx={{ pt: 1, pb: 2, mx: 'auto' }}>{locales["register_now"]}</H1>
             <InputText
-                error={!!errors.username?.message}
-                helperText={errors.username?.message}
-                {...register('username')}
-                type='username'
+                error={!!errors.fullName?.message}
+                helperText={errors.fullName?.message}
+                {...register('fullName')}
+                type='fullName'
                 label={locales["fullname"]}
             />
             <InputText
@@ -42,10 +42,10 @@ const RegisterModule = ({ locales }: { locales: { [key: string]: string; } }) =>
                 label={locales["password"]}
             />
             <PasswordField
-                error={!!errors.repeat_password?.message}
-                helperText={errors.repeat_password?.message}
-                validation={register('repeat_password')}
-                label={locales["repeat_password"]}
+                error={!!errors.repeatPassword?.message}
+                helperText={errors.repeatPassword?.message}
+                validation={register('repeatPassword')}
+                label={locales["repeatPassword"]}
             />
             <Box
                 sx={{

@@ -10,7 +10,7 @@ export default async function AuthPage({ params: { locale } }: { params: { local
                 welcome_back: t("welcome_back"),
                 fullname: t("fullname"),
                 password: t("password"),
-                repeat_password: t("repeat_password"),
+                repeatPassword: t("repeatPassword"),
                 register_now: t("register_now"),
                 username: t("username"),
                 register: t("register"),

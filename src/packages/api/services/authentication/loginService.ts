@@ -1,6 +1,6 @@
 import { MutationFunction, useMutation, UseMutationOptions } from "@tanstack/react-query";
-import { ErrorType, ResponseErrorResponse } from "../types";
-import { customInstance } from "../configs";
+import { ErrorType, RequestOptionsParameters, ResponseErrorResponse } from "../../types";
+import { customInstance } from "../../configs";
 
 interface User {
     id: number;
@@ -11,18 +11,17 @@ interface User {
     updatedAt: string;
 }
 
-export interface VerifyUserPayloadType {
+interface VerifyUserPayloadType {
     username: string;
     password: string;
 }
 
-export type LoginResponse = {
+type LoginResponse = {
     message: string;
     user: User;
     token: string;
 };
 
-type SecondParameter<T extends (...args: any) => any> = Parameters<T>[1];
 
 export const getVerifyUserMutationOptions = <
     TError = ErrorType<
@@ -36,7 +35,7 @@ export const getVerifyUserMutationOptions = <
         { data: VerifyUserPayloadType },
         TContext
     >;
-    request?: SecondParameter<typeof customInstance>;
+    request?: RequestOptionsParameters<typeof customInstance>;
 }): UseMutationOptions<
     Awaited<ReturnType<typeof VerifyUser>>,
     TError,
@@ -64,7 +63,7 @@ export const getVerifyUserMutationOptions = <
  */
 export const VerifyUser = (
     VerifyUserPayload: VerifyUserPayloadType,
-    options?: SecondParameter<typeof customInstance>
+    options?: RequestOptionsParameters<typeof customInstance>
 ) => {
     return customInstance<LoginResponse>(
         {
@@ -93,7 +92,7 @@ export const useVerifyUser = <
         { data: VerifyUserPayloadType },
         TContext
     >;
-    request?: SecondParameter<typeof customInstance>;
+    request?: RequestOptionsParameters<typeof customInstance>;
 }) => {
     const mutationOptions =
         getVerifyUserMutationOptions(options);

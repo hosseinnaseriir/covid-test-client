@@ -7,3 +7,4 @@ export interface ResponseErrorResponse {
 }
 
 
+export type RequestOptionsParameters<T extends (...args: any) => any> = Parameters<T>[1];
