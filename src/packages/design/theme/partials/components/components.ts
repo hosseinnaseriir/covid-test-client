@@ -6,6 +6,7 @@ import {
   MuiInputLabel,
   MuiTextField,
   MuiSelect,
+  MuiAutocomplete,
   MuiFormControlLabel
 } from './inputs';
 import { MuiContainer } from './layout';
@@ -17,5 +18,6 @@ export const components: Components = {
   MuiContainer,
   MuiFormHelperText,
   MuiFormControlLabel,
-  MuiSelect
+  MuiSelect,
+  MuiAutocomplete
 };

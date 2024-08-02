@@ -1,6 +1,3 @@
-
-
-
 import { FunctionComponent } from 'react';
 
 import { SvgIconProps } from '@design';

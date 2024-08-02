@@ -3,6 +3,7 @@ export type {
   SxProps,
   SvgIconProps,
   SelectProps,
+  AutocompleteProps,
   Components, FormControlLabelProps, FormHelperTextProps,
 } from '@mui/material';
 
@@ -18,5 +19,6 @@ export {
   Tooltip,
   Badge, Chip,
   TextField as DefaultMuiTextField,
-  MenuItem
+  Autocomplete as DefaultMuiAutocomplete,
+  MenuItem,
 } from '@mui/material';
