@@ -10,9 +10,9 @@ export const BASE_INSTANCE: AxiosInstance = axios.create({
 });
 BASE_INSTANCE.interceptors.request.use(
   (config) => {
-    const token = Cookies.get('token');
+    const token = Cookies.get(process.env.NEXT_PUBLIC_TOKEN_KEY!);
     if (token) {
-      config.headers.Authorization = `${token}`;
+      config.headers.Authorization = `Bearer ${token}`;
     }
     return config;
   },
