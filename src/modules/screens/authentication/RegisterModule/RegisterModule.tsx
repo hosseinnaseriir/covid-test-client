@@ -1,16 +1,16 @@
 'use client';
 import { Body2, Box, Button, Divider, H1, InputText, PasswordField } from '@design';
-import { useLoginModule } from './hooks';
+import { useRegisterModule } from './hooks';
 import { useRoutes } from '@routes';
 
-const LoginModule = ({ locales }: { locales: { [key: string]: string; } }) => {
-    const { register, onSubmitLogin, isValid, errors, isPending } = useLoginModule();
-    const ROUTES = useRoutes();
+const RegisterModule = ({ locales }: { locales: { [key: string]: string; } }) => {
+    const { register, onSubmitRegister, isValid, errors, isPending } = useRegisterModule();
 
+    const ROUTES = useRoutes();
     return (
         <Box
             component='form'
-            onSubmit={onSubmitLogin}
+            onSubmit={onSubmitRegister}
             sx={{
                 flex: 1,
                 display: 'flex',
@@ -20,7 +20,14 @@ const LoginModule = ({ locales }: { locales: { [key: string]: string; } }) => {
                 mx: 'auto',
             }}
         >
-            <H1 sx={{ pt: 1, pb: 2, mx: 'auto' }}>{locales["welcome_back"]}</H1>
+            <H1 sx={{ pt: 1, pb: 2, mx: 'auto' }}>{locales["register_now"]}</H1>
+            <InputText
+                error={!!errors.username?.message}
+                helperText={errors.username?.message}
+                {...register('username')}
+                type='username'
+                label={locales["fullname"]}
+            />
             <InputText
                 error={!!errors.username?.message}
                 helperText={errors.username?.message}
@@ -34,6 +41,12 @@ const LoginModule = ({ locales }: { locales: { [key: string]: string; } }) => {
                 validation={register('password')}
                 label={locales["password"]}
             />
+            <PasswordField
+                error={!!errors.repeat_password?.message}
+                helperText={errors.repeat_password?.message}
+                validation={register('repeat_password')}
+                label={locales["repeat_password"]}
+            />
             <Box
                 sx={{
                     display: 'flex',
@@ -44,11 +57,11 @@ const LoginModule = ({ locales }: { locales: { [key: string]: string; } }) => {
                 <Button
                     disabled={isValid}
                     type='submit'
-                    loading={isPending}
+                    loading={!!isPending}
                     variant='contained'
                     color='primary'
                 >
-                    {locales["login"]}
+                    {locales["register"]}
                 </Button>
             </Box>
             <Box
@@ -64,14 +77,15 @@ const LoginModule = ({ locales }: { locales: { [key: string]: string; } }) => {
             </Box>
 
             <Button
-                href={ROUTES.AUTH.REGISTER}
                 color='primary'
                 variant='outlined'
+                href={ROUTES.AUTH.LOGIN}
+
             >
-                {locales["register"]}
+                {locales["login"]}
             </Button>
         </Box>
     );
 };
 
-export default LoginModule;
+export default RegisterModule;

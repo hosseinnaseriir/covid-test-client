@@ -1,4 +1,6 @@
+import Coockies from "js-cookie";
+
 export const i18nConfig = {
-  locales: ['en', 'gr'],
-  defaultLocale: 'en',
+  locales: ['en', 'de'],
+  defaultLocale: Coockies.get(process.env.NEXT_PUBLIC_LOCALE_COOKIE ?? '') ?? 'en',
 };

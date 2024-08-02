@@ -58,6 +58,7 @@ export const MuiSelect: Components['MuiSelect'] = {
           height: '20px',
           opacity: 1,
           transform: 'translateY(-36%)',
+          paddingLeft: 10,
           left: 7,
           ...theme.typography.body2,
         },

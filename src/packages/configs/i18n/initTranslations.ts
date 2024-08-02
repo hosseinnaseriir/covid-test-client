@@ -4,8 +4,8 @@ import { createInstance } from 'i18next';
 import resourcesToBackend from 'i18next-resources-to-backend';
 
 export async function initTranslations(
-  locale: string,
-  namespaces: Array<string>
+  locale: string = 'default',
+  namespaces: Array<string> = ['en']
 ) {
   const i18nInstance = createInstance();
 

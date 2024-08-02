@@ -16,9 +16,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="-dark-theme">
       <body className={`${inter.className}`}>
-        <>
-          {children}
-        </>
+        {children}
       </body>
     </html>
   );
