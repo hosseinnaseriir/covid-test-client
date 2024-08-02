@@ -1,14 +1,12 @@
 import { inputBaseClasses, selectClasses } from '@mui/material';
 
 import type { Components, SelectProps, StylePropsType } from '@design';
-import { ArrowDownLineSvg } from '@icons/index';
 
 export const MuiSelect: Components['MuiSelect'] = {
   defaultProps: {
     MenuProps: {
       disableRestoreFocus: false,
     },
-    IconComponent: ArrowDownLineSvg,
   },
   styleOverrides: {
     root: ({ theme }: StylePropsType<SelectProps>) => ({

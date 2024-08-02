@@ -8,7 +8,7 @@ import { useRouter } from 'next/navigation';
 const ButtonComponent: ForwardRefRenderFunction<
   HTMLButtonElement,
   ButtonProps
-> = ({ children, onClick, href, ...restProps }, ref) => {
+> = ({ children, onClick, href, loading, ...restProps }, ref) => {
 
   const router = useRouter()
   return (
@@ -22,10 +22,11 @@ const ButtonComponent: ForwardRefRenderFunction<
       }}
       {...restProps}
       ref={ref}
+      disabled={loading}
       startIcon={<span>{restProps.startIcon}</span>}
       endIcon={<span>{restProps.endIcon}</span>}
     >
-      {restProps.loading ? '...' : children}
+      {!!loading ? '...' : children}
     </MuiButton>
   );
 };

@@ -19,7 +19,7 @@ export const lightPalette: PaletteType = {
     tertiary: '#3C3C434D',
   },
   primary: {
-    lighter: '#FFF2E0',
+    lighter: '#EBFFFD',
     light: '#5DADE2',
     main: '#0C68F4',
     dark: '#0C68F4 ',

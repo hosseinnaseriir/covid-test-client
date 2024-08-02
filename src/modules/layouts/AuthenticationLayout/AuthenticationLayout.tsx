@@ -3,6 +3,8 @@ import { Body2, Box } from '@design';
 import { ReactNode } from 'react';
 import { BrandPrimarySvg } from '@icons/svgs';
 import { LanguageChanger, AuthSlider } from './partials';
+import Link from 'next/link';
+import { cookies } from 'next/headers';
 
 const AuthenticationLayout = ({ children }: { children: ReactNode }) => {
 
@@ -23,12 +25,13 @@ const AuthenticationLayout = ({ children }: { children: ReactNode }) => {
                         alignItems: 'center',
                     }}
                 >
-
-                    <BrandPrimarySvg
-                        sx={{
-                            fontSize: '4rem'
-                        }}
-                    />
+                    <Link href={"/"}>
+                        <BrandPrimarySvg
+                            sx={{
+                                fontSize: '4rem'
+                            }}
+                        />
+                    </Link>
                     <LanguageChanger />
                 </Box>
                 <Box

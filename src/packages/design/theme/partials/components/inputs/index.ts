@@ -4,3 +4,4 @@ export * from './MuiHelperText';
 export * from './MuiInputLabel';
 export * from './MuiTextField';
 export * from './MuiSelect';
+export * from './MuiAutocomplete'
