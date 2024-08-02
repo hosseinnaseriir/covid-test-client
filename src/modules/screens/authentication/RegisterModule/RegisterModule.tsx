@@ -2,10 +2,9 @@
 import { Body2, Box, Button, Divider, H1, InputText, PasswordField } from '@design';
 import { useLoginModule } from './hooks';
 
-const LoginModule = ({ locales }: { locales: { [key: string]: string; } }) => {
+const RegisterModule = ({ locales }: { locales: { [key: string]: string; } }) => {
     const { register, onSubmitLogin, isValid, errors, isPending } = useLoginModule();
 
-    console.log(locales);
 
     return (
         <Box
@@ -20,7 +19,14 @@ const LoginModule = ({ locales }: { locales: { [key: string]: string; } }) => {
                 mx: 'auto',
             }}
         >
-            <H1 sx={{ pt: 1, pb: 2, mx: 'auto' }}>{locales["welcome_back"]}</H1>
+            <H1 sx={{ pt: 1, pb: 2, mx: 'auto' }}>{locales["register_now"]}</H1>
+            <InputText
+                error={!!errors.username?.message}
+                helperText={errors.username?.message}
+                {...register('username')}
+                type='username'
+                label={locales["fullname"]}
+            />
             <InputText
                 error={!!errors.username?.message}
                 helperText={errors.username?.message}
@@ -34,6 +40,12 @@ const LoginModule = ({ locales }: { locales: { [key: string]: string; } }) => {
                 validation={register('password')}
                 label={locales["password"]}
             />
+            <PasswordField
+                error={!!errors.password?.message}
+                helperText={errors.password?.message}
+                validation={register('password')}
+                label={locales["repeat_password"]}
+            />
             <Box
                 sx={{
                     display: 'flex',
@@ -44,11 +56,11 @@ const LoginModule = ({ locales }: { locales: { [key: string]: string; } }) => {
                 <Button
                     disabled={isValid}
                     type='submit'
-                    loading={isPending}
+                    loading={!!isPending}
                     variant='contained'
                     color='primary'
                 >
-                    {locales["login"]}
+                    {locales["register"]}
                 </Button>
             </Box>
             <Box
@@ -67,10 +79,10 @@ const LoginModule = ({ locales }: { locales: { [key: string]: string; } }) => {
                 color='primary'
                 variant='outlined'
             >
-                {locales["register"]}
+                {locales["login"]}
             </Button>
         </Box>
     );
 };
 
-export default LoginModule;
+export default RegisterModule;

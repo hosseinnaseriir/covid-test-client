@@ -42,7 +42,7 @@ export const useLoginModule = () => {
     register,
     setError,
     onSubmitLogin,
-    isPending: isPending ? true : undefined,
+    isPending,
     isValid: !isDirty || !isValid,
   };
 };

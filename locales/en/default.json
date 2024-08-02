@@ -1,6 +1,11 @@
 {
-    "hi": "hello how are you",
-    "or": "Or",
-    "continue": "Continue",
-    "phone_number": "Phone Number"
+    "welcome_back": "Welcome Back!",
+    "username": "Username",
+    "password": "Password",
+    "repeat_password": "Repeat Password",
+    "fullname": "Full Name",
+    "login": "Login",
+    "or": "or",
+    "register": "Register",
+    "register_now": "Register Now!"
 }

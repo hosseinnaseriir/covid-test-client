@@ -1,10 +1,8 @@
 
-import { Body2, Box, MenuItem, Select } from '@design';
-import { GlobalLineSvg } from '@icons/svgs';
-
-import { AuthSlider } from './partials';
+import { Body2, Box } from '@design';
 import { ReactNode } from 'react';
 import { BrandPrimarySvg } from '@/packages/icons/svgs/BrandPrimarySvg';
+import { LanguageChanger, AuthSlider } from './partials';
 
 const AuthenticationLayout = ({ children }: { children: ReactNode }) => {
 
@@ -31,24 +29,7 @@ const AuthenticationLayout = ({ children }: { children: ReactNode }) => {
                             fontSize: '4rem'
                         }}
                     />
-                    <Select
-                        startAdornment={<GlobalLineSvg />}
-                        sx={{
-                            minWidth: 170,
-                        }}
-                        defaultValue='English'
-                    >
-                        <MenuItem
-                            sx={{
-                                display: 'flex',
-                                gap: 1,
-                                alignItems: 'center',
-                            }}
-                            value='English'
-                        >
-                            <Body2>English</Body2>
-                        </MenuItem>
-                    </Select>
+                    <LanguageChanger />
                 </Box>
                 <Box
                     sx={{
@@ -66,26 +47,7 @@ const AuthenticationLayout = ({ children }: { children: ReactNode }) => {
                     fontWeight={400}
                     sx={{ mx: 'auto', p: 1, pb: 0, textAlign: 'center' }}
                 >
-                    By clicking Login you agree to our{' '}
-                    <Box
-                        component='u'
-                        sx={{
-                            mx: 0.5,
-                        }}
-                    >
-                        {' '}
-                        Terms
-                    </Box>
-                    &{' '}
-                    <Box
-                        component='u'
-                        sx={{
-                            mx: 0.5,
-                        }}
-                    >
-                        {' '}
-                        Privacy Policy
-                    </Box>
+                    © Copyright All rights reserved by Hossein Naseri
                 </Body2>
             </Box>
             <AuthSlider />

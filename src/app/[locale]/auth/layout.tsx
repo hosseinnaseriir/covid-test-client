@@ -1,6 +1,7 @@
-import AuthenticationLayout from "@/modules/layouts/AuthenticationLayout/AuthenticationLayout";
 import type { Metadata } from "next";
-import { Inter } from 'next/font/google'
+import dynamic from "next/dynamic";
+
+const AuthenticationLayout = dynamic(() => import('@/modules/layouts/AuthenticationLayout/AuthenticationLayout'))
 
 
 export const metadata: Metadata = {
