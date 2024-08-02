@@ -1,47 +1,25 @@
 // import { FieldPath, FieldValues, UseFormSetError } from 'react-hook-form';
 
-// import { ErrorType } from '@api';
-// import { lowerFirstLetter } from '@helpers/stringHelpers';
-// import { toaster } from '@system/components';
+import { FieldValues, UseFormSetError } from "react-hook-form";
+import { ErrorType, ResponseErrorResponse, ValidationErrorResponse } from "../types";
+import toast from "react-hot-toast";
 
-// export type FieldErrorType = {
-//   validationErrors?: Array<{
-//     message?: string;
-//     property?: string;
-//   }>;
-//   error?: {
-//     message?: string;
-//     property?: string;
-//   };
-// };
-
-// export const formErrorHandler = <U extends FieldValues>({
-//   err,
-//   setError,
-// }: {
-//   err: ErrorType<FieldErrorType | unknown>;
-//   setError: UseFormSetError<U>;
-// }) => {
-//   const errorData = err.response?.data as FieldErrorType;
-//   const validationErrors =
-//     errorData?.validationErrors as FieldErrorType['validationErrors'];
-//   const commonError = errorData?.error;
-//   switch (err.response?.status) {
-//     case 400:
-//     case 422:
-//       if (Array.isArray(validationErrors)) {
-//         validationErrors.map((error) => {
-//           const property = lowerFirstLetter(error.property!);
-//           setError(property as FieldPath<U>, {
-//             message: error.message,
-//           });
-//         });
-//       }
-//       toaster.error('Please fill the form fields carefully!');
-//       break;
-//     default:
-//       if (typeof commonError === 'string') {
-//         toaster.error(commonError);
-//       }
-//   }
-// };
+export const formErrorHandler = <U extends FieldValues>({
+    ex,
+    setError,
+}: {
+    ex: ErrorType<ValidationErrorResponse>;
+    setError: UseFormSetError<U>;
+}) => {
+    const error = ex.response?.data as ResponseErrorResponse;
+    if (error?.fields?.length) {
+        error.fields?.map(field => {
+            // @ts-ignore
+            setError(field.field, {
+                message: field.msg?.[0]
+            })
+        })
+    } else {
+        toast.error(error.message ?? "something went wrong!")
+    }
+}

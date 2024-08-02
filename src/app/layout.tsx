@@ -5,6 +5,9 @@ import type { Metadata } from "next";
 import { Inter } from 'next/font/google'
 import './globals.css'
 import ReactQueryProvider from "@/packages/system/providers/ReactQueryProvider/ReactQueryProvider";
+import { Toaster } from 'react-hot-toast';
+import { cookies } from 'next/headers'
+
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -24,6 +27,10 @@ export default function RootLayout({
       <link rel="icon" href="/covid-test.svg" sizes="any" />
       <body className={`${inter.className}`}>
         <AppRouterCacheProvider>
+          <Toaster
+            position="top-center"
+            reverseOrder={false}
+          />
           <Experimental_CssVarsProvider theme={theme}>
             <ReactQueryProvider>
               {children}
