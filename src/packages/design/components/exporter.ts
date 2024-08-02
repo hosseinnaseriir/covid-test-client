@@ -1,3 +1,4 @@
+
 export type {
   TextFieldProps as MuiTextFieldProps,
   SxProps,
@@ -6,6 +7,8 @@ export type {
   AutocompleteProps,
   Components, FormControlLabelProps, FormHelperTextProps,
 } from '@mui/material';
+
+export type { DataGridProps } from '@mui/x-data-grid';
 
 export {
   Box,
@@ -18,6 +21,7 @@ export {
   InputLabel,
   Tooltip,
   Badge, Chip,
+  Pagination,
   TextField as DefaultMuiTextField,
   Autocomplete as DefaultMuiAutocomplete,
   MenuItem,

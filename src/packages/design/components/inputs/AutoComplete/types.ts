@@ -10,14 +10,14 @@ export type AutoCompleteOption = {
   icon?: ReactNode;
   color?: ReactNode;
   avatar?: ReactNode;
-  label: ReactNode;
+  label?: ReactNode;
   value: ReactNode;
 } | null;
 
 export interface AutoCompleteType
   extends Omit<AutocompleteProps<any, any, any, any>, 'renderInput'> {
   options: Array<AutoCompleteOption>;
-  label: InputTextProps['label'];
+  label?: InputTextProps['label'];
   requiredStar?: InputTextProps['requiredStar'];
   information?: InputTextProps['information'];
   error?: InputTextProps['error'];
