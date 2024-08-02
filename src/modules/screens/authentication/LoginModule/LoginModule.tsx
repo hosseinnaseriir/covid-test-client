@@ -1,11 +1,11 @@
 'use client';
 import { Body2, Box, Button, Divider, H1, InputText, PasswordField } from '@design';
 import { useLoginModule } from './hooks';
+import { useRoutes } from '@routes';
 
 const LoginModule = ({ locales }: { locales: { [key: string]: string; } }) => {
     const { register, onSubmitLogin, isValid, errors, isPending } = useLoginModule();
-
-    console.log(locales);
+    const ROUTES = useRoutes();
 
     return (
         <Box
@@ -64,6 +64,7 @@ const LoginModule = ({ locales }: { locales: { [key: string]: string; } }) => {
             </Box>
 
             <Button
+                href={ROUTES.AUTH.REGISTER}
                 color='primary'
                 variant='outlined'
             >

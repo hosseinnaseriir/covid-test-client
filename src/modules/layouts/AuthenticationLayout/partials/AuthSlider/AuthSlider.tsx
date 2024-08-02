@@ -1,9 +1,15 @@
 
+'use client'
 import { Box } from '@design';
 import Image from 'next/image';
-import test from '@assets/images/civid-test-login.jpg'
-export const AuthSlider = () => {
+import covidTestLoginImage from '@assets/images/civid-test-login.jpg'
+import covidTestRegisterImage from '@assets/images/civid-test-register.jpg'
+import { useRoutes } from '@routes';
+import { usePathname } from 'next/navigation';
 
+export const AuthSlider = () => {
+  const pathname = usePathname()
+  const ROUTES = useRoutes()
   return (
     <Box sx={{
       flex: 1,
@@ -11,11 +17,13 @@ export const AuthSlider = () => {
       height: '100vh'
     }}>
       <Image
-        alt='covid-test login'
+        alt='covid-test app'
         style={{
-          objectFit: 'cover'
+          objectFit: 'cover',
+          height: '100%',
+          width: '100%'
         }}
-        src={test}
+        src={pathname === ROUTES.AUTH.LOGIN ? covidTestLoginImage : covidTestRegisterImage}
       />
     </Box>
   )

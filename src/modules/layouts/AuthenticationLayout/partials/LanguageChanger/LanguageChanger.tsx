@@ -3,7 +3,8 @@
 import { i18nConfig } from '@configs';
 import { useRouter } from 'next/navigation';
 import { usePathname } from 'next/navigation';
-import { Body2, GlobalLineSvg, MenuItem, Select } from '@/packages';
+import { Body2, MenuItem, Select } from '@design';
+import { GlobalLineSvg } from '@icons';
 import { useCallback, useEffect, useState } from 'react';
 import Cookies from 'js-cookie';
 

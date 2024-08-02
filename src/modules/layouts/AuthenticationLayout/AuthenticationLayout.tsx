@@ -1,7 +1,7 @@
 
 import { Body2, Box } from '@design';
 import { ReactNode } from 'react';
-import { BrandPrimarySvg } from '@/packages/icons/svgs/BrandPrimarySvg';
+import { BrandPrimarySvg } from '@icons/svgs';
 import { LanguageChanger, AuthSlider } from './partials';
 
 const AuthenticationLayout = ({ children }: { children: ReactNode }) => {

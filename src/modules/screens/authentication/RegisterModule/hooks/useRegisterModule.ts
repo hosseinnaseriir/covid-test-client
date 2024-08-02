@@ -3,32 +3,34 @@ import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
 
-import { useRouter } from 'next/navigation';
-import { createRegex } from '@/packages/helpers';
-import { useVerifyUser } from '@/packages/api/services/auth';
+import { createRegex } from '@helpers';
+import { useVerifyUser } from '@api';
 
 const PASSWORD_REG = createRegex('password');
-const LOGIN_SCHEMA = z.object({
+const REGISTER_SCHEMA = z.object({
+  fullname: z.string(),
   username: z.string(),
   password: z.string().regex(PASSWORD_REG, {
     message: 'Choose Stronger password!',
   }),
+  repeat_password: z.string().regex(PASSWORD_REG, {
+    message: 'Choose Stronger password!',
+  }),
 });
 
-type LoginSchemaType = z.infer<typeof LOGIN_SCHEMA>;
+type RegisterSchemaType = z.infer<typeof REGISTER_SCHEMA>;
 
-export const useLoginModule = () => {
+export const useRegisterModule = () => {
   const {
     register,
     handleSubmit,
     formState: { errors, isDirty, isValid },
     setError,
-  } = useForm<LoginSchemaType>({ resolver: zodResolver(LOGIN_SCHEMA) });
-  const router = useRouter();
+  } = useForm<RegisterSchemaType>({ resolver: zodResolver(REGISTER_SCHEMA) });
 
   const { mutate: verifyUserMutate, isPending } = useVerifyUser()
 
-  const onSubmitLogin = (_event: FormEvent) => {
+  const onSubmitRegister = (_event: FormEvent) => {
     return handleSubmit((data) => {
       verifyUserMutate({
         data
@@ -41,7 +43,7 @@ export const useLoginModule = () => {
     errors,
     register,
     setError,
-    onSubmitLogin,
+    onSubmitRegister,
     isPending,
     isValid: !isDirty || !isValid,
   };

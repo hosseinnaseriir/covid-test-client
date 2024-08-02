@@ -1,15 +1,16 @@
 'use client';
 import { Body2, Box, Button, Divider, H1, InputText, PasswordField } from '@design';
-import { useLoginModule } from './hooks';
+import { useRegisterModule } from './hooks';
+import { useRoutes } from '@routes';
 
 const RegisterModule = ({ locales }: { locales: { [key: string]: string; } }) => {
-    const { register, onSubmitLogin, isValid, errors, isPending } = useLoginModule();
+    const { register, onSubmitRegister, isValid, errors, isPending } = useRegisterModule();
 
-
+    const ROUTES = useRoutes();
     return (
         <Box
             component='form'
-            onSubmit={onSubmitLogin}
+            onSubmit={onSubmitRegister}
             sx={{
                 flex: 1,
                 display: 'flex',
@@ -41,9 +42,9 @@ const RegisterModule = ({ locales }: { locales: { [key: string]: string; } }) =>
                 label={locales["password"]}
             />
             <PasswordField
-                error={!!errors.password?.message}
-                helperText={errors.password?.message}
-                validation={register('password')}
+                error={!!errors.repeat_password?.message}
+                helperText={errors.repeat_password?.message}
+                validation={register('repeat_password')}
                 label={locales["repeat_password"]}
             />
             <Box
@@ -78,6 +79,8 @@ const RegisterModule = ({ locales }: { locales: { [key: string]: string; } }) =>
             <Button
                 color='primary'
                 variant='outlined'
+                href={ROUTES.AUTH.LOGIN}
+
             >
                 {locales["login"]}
             </Button>

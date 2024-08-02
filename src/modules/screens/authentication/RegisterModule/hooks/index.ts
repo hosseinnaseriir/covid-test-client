@@ -1,1 +1,1 @@
-export * from './useLoginModule';
+export * from './useRegisterModule';
