@@ -1,3 +1,4 @@
+"use client"
 import { forwardRef, ForwardRefRenderFunction, useId } from 'react';
 import { DefaultMuiAutocomplete, InputText } from '@design';
 import { AutoCompleteType } from './types';

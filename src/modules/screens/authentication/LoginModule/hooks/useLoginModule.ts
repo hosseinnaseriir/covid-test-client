@@ -31,7 +31,7 @@ export const useLoginModule = () => {
   const router = useRouter();
   const ROUTES = useRoutes();
 
-  const { mutate: verifyUserMutate, isPending } = useVerifyUser({
+  const { mutate: verifyUserMutate, isPending: isLoading } = useVerifyUser({
     mutation: {
       onError(ex) {
         formErrorHandler({
@@ -62,7 +62,7 @@ export const useLoginModule = () => {
     register,
     setError,
     onSubmitLogin,
-    isPending: isPending ? true : undefined,
+    isLoading,
     isValid: !isDirty || !isValid,
   };
 };

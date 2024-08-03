@@ -2,8 +2,9 @@ import axios, { AxiosError, AxiosInstance } from 'axios';
 import { AxiosRequestConfig } from 'axios';
 import Cookies from 'js-cookie';
 
+export const baseURL = process.env.NEXT_PUBLIC_BASE_URI
 export const BASE_INSTANCE: AxiosInstance = axios.create({
-  baseURL: process.env.NEXT_PUBLIC_BASE_URI,
+  baseURL,
   headers: {
     'Content-Type': 'application/json',
   },

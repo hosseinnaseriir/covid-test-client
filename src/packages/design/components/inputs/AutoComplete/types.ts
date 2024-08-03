@@ -6,18 +6,18 @@ import { AutocompleteProps } from '@design';
 import { InputTextProps } from '..';
 
 export type AutoCompleteOption = {
-  id: string;
+  id: string | number;
   icon?: ReactNode;
   color?: ReactNode;
   avatar?: ReactNode;
-  label: ReactNode;
-  value: ReactNode;
+  label?: ReactNode;
+  value: string | number;
 } | null;
 
 export interface AutoCompleteType
   extends Omit<AutocompleteProps<any, any, any, any>, 'renderInput'> {
   options: Array<AutoCompleteOption>;
-  label: InputTextProps['label'];
+  label?: InputTextProps['label'];
   requiredStar?: InputTextProps['requiredStar'];
   information?: InputTextProps['information'];
   error?: InputTextProps['error'];

@@ -4,4 +4,6 @@ interface WithChildren {
     children: ReactNode
 }
 
-export type WithChildrenComponent = React.FC<WithChildren>
+export type LocalesType = { locales: { [key: string]: string; } }
+
+export type WithChildrenComponent<T = {}> = React.FC<WithChildren & T>

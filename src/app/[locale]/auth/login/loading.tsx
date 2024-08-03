@@ -1,5 +1,5 @@
 const LoginLoading = () => {
-    return ("....");
+    return ("LoginLoading");
 }
 
 export default LoginLoading;

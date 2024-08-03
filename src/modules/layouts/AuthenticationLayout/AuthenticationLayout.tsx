@@ -4,10 +4,8 @@ import { ReactNode } from 'react';
 import { BrandPrimarySvg } from '@icons/svgs';
 import { LanguageChanger, AuthSlider } from './partials';
 import Link from 'next/link';
-import { cookies } from 'next/headers';
 
 const AuthenticationLayout = ({ children }: { children: ReactNode }) => {
-
     return (
         <Box
             sx={{
@@ -25,7 +23,7 @@ const AuthenticationLayout = ({ children }: { children: ReactNode }) => {
                         alignItems: 'center',
                     }}
                 >
-                    <Link href={"/"}>
+                    <Link href={`/`}>
                         <BrandPrimarySvg
                             sx={{
                                 fontSize: '4rem'

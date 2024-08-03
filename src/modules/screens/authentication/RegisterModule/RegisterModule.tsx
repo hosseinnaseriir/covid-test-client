@@ -4,7 +4,7 @@ import { useRegisterModule } from './hooks';
 import { useRoutes } from '@routes';
 
 const RegisterModule = ({ locales }: { locales: { [key: string]: string; } }) => {
-    const { register, onSubmitRegister, isValid, errors, isPending } = useRegisterModule();
+    const { register, onSubmitRegister, isValid, errors, isLoading } = useRegisterModule();
 
     const ROUTES = useRoutes();
     return (
@@ -57,7 +57,7 @@ const RegisterModule = ({ locales }: { locales: { [key: string]: string; } }) =>
                 <Button
                     disabled={isValid}
                     type='submit'
-                    loading={!!isPending}
+                    loading={!!isLoading}
                     variant='contained'
                     color='primary'
                 >
