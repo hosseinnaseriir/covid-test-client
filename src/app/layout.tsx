@@ -6,7 +6,8 @@ import { Inter } from 'next/font/google'
 import './globals.css'
 import ReactQueryProvider from "@/packages/system/providers/ReactQueryProvider/ReactQueryProvider";
 import { Toaster } from 'react-hot-toast';
-import { cookies } from 'next/headers'
+import { initTranslations } from "@/packages";
+import MainContextProvider from "@/packages/contexts/MainContextProvider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -14,13 +15,14 @@ export const metadata: Metadata = {
   title: "Covid Test",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
   params: { locale }
 }: Readonly<{
   children: React.ReactNode;
   params: { locale: string }
 }>) {
+  const { t } = await initTranslations(locale, ['default']);
 
   return (
     <html lang={locale ?? "en"}>
@@ -33,7 +35,12 @@ export default function RootLayout({
           />
           <Experimental_CssVarsProvider theme={theme}>
             <ReactQueryProvider>
-              {children}
+              <MainContextProvider locales={{
+                register: t("register"),
+                login: t("login"),
+              }}>
+                {children}
+              </MainContextProvider>
             </ReactQueryProvider>
           </Experimental_CssVarsProvider>
         </AppRouterCacheProvider>

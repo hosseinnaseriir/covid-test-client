@@ -1,5 +1,4 @@
 import { useQuery, UseQueryOptions, QueryFunctionContext } from '@tanstack/react-query';
-import { AxiosResponse } from 'axios';
 import { RequestOptionsParameters, ResponseErrorResponse } from '../../types';
 import { customInstance } from '../../configs';
 

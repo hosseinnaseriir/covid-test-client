@@ -6,12 +6,12 @@ import { AutocompleteProps } from '@design';
 import { InputTextProps } from '..';
 
 export type AutoCompleteOption = {
-  id: string;
+  id: string | number;
   icon?: ReactNode;
   color?: ReactNode;
   avatar?: ReactNode;
   label?: ReactNode;
-  value: ReactNode;
+  value: string | number;
 } | null;
 
 export interface AutoCompleteType

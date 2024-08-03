@@ -2,8 +2,9 @@
 import { Body2, Box, Button, Divider, H1, InputText, PasswordField } from '@design';
 import { useLoginModule } from './hooks';
 import { useRoutes } from '@routes';
+import { LocalesType } from '@/packages/types';
 
-const LoginModule = ({ locales }: { locales: { [key: string]: string; } }) => {
+const LoginModule = ({ locales }: LocalesType) => {
     const { register, onSubmitLogin, isValid, errors, isPending } = useLoginModule();
     const ROUTES = useRoutes();
 
