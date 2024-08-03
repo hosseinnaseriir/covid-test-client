@@ -1,7 +1,7 @@
 import { initTranslations } from "@configs";
 import dynamic from "next/dynamic";
 
-const HomeModule = dynamic(() => import('@/modules/screens/home/HomeModule'))
+const HomeModule = dynamic(() => import('@/modules/screens/home/HomeModule/HomeModule'))
 
 export default async function Home({ params: { locale } }: { params: { locale: string } }) {
   const { t } = await initTranslations(locale, ['default']);
