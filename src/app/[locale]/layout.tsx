@@ -6,7 +6,7 @@ import { Inter } from 'next/font/google'
 import './globals.css'
 import { Toaster } from 'react-hot-toast';
 import { initTranslations } from "@/packages";
-import ReactQueryProvider from "@/packages/system/providers/ReactQueryProvider/ReactQueryProvider";
+import ReactQueryProvider from "@/packages/system/components/providers/ReactQueryProvider/ReactQueryProvider";
 import MainContextProvider from "@/packages/contexts/MainContextProvider";
 
 const inter = Inter({ subsets: ["latin"] });

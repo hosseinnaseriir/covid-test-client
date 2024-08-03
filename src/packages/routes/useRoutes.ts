@@ -8,6 +8,7 @@ export const useRoutes = () => {
 
     const ROUTES = useMemo(() => ({
         ROOT: `/${lang}/`,
+        SEARCH: (params: string) => `/${lang}/search/${params}`,
         AUTH: {
             LOGIN: `/${lang}/auth/login`,
             REGISTER: `/${lang}/auth/register`,

@@ -3,7 +3,6 @@ import dynamic from "next/dynamic";
 const LoginModule = dynamic(() => import('@/modules/screens/authentication/LoginModule/LoginModule'))
 
 export default async function AuthPage({ params: { locale } }: { params: { locale: string } }) {
-    console.log({ locale });
     const { t } = await initTranslations(locale, ['default']);
     return (
         <>

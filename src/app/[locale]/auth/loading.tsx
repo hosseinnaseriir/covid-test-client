@@ -1,5 +1,9 @@
+import { SkeletonLoading } from "@design";
+
 const AuthLoading = () => {
-    return ("AuthLoading");
+    return (
+        <SkeletonLoading />
+    );
 }
 
 export default AuthLoading;

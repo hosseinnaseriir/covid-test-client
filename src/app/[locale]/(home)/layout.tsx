@@ -15,8 +15,6 @@ export default async function RootLayout({
   children: React.ReactNode;
 }>) {
   const { t } = await initTranslations(locale, ['default']);
-  // const token = cookies().get(process.env.NEXT_PUBLIC_TOKEN_KEY!);
-  // if (!token) return redirect(`en/auth/login`)
   return (
     <MainLayout
       locales={{
