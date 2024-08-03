@@ -16,7 +16,8 @@ const MainLayout = ({ children, locales }: { children: ReactNode, locales: Local
                     <Appbar />
                 </Suspense>
                 <Box sx={{
-                    position: 'relative'
+                    position: 'relative',
+                    height: "50vh"
                 }}>
                     <Box sx={{
                         position: 'absolute',
@@ -25,7 +26,7 @@ const MainLayout = ({ children, locales }: { children: ReactNode, locales: Local
                         justifyContent: 'center',
                         flexDirection: 'column',
                         width: '100%',
-                        height: '100%'
+                        height: '100%', p: 1,
                     }}>
                         <H1 color="white">{locales['main_title']}</H1>
                         <MainSearch />

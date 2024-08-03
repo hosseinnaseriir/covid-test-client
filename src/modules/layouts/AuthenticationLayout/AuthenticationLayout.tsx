@@ -39,6 +39,7 @@ const AuthenticationLayout = ({ children }: { children: ReactNode }) => {
                         flexDirection: 'column',
                         overflow: 'auto',
                         pb: 5,
+                        px: 1,
                     }}
                 >
                     {children}

@@ -55,7 +55,7 @@ export const LanguageChanger = () => {
             onChange={handleChange} value={currentLocale}
             startAdornment={<GlobalLineSvg />}
             sx={{
-                minWidth: 170,
+                minWidth: 130,
             }}
             defaultValue={LANGUAGES[0].value}
         >

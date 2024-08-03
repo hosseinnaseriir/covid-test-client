@@ -38,7 +38,7 @@ const Appbar = () => {
         <Box
             component="nav"
         >
-            <Container sx={{ p: 2 }}>
+            <Container sx={{ p: 1.5 }}>
                 <Box sx={{
                     display: 'flex',
                     justifyContent: 'space-between',
