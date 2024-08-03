@@ -1,6 +1,6 @@
 'use client'
 import { Stats, useStats } from '@/packages/api';
-import { DataGrid } from '@mui/x-data-grid';
+import { DataGrid } from '@design';
 import { useEffect, useState } from 'react';
 import { NoRowsOverlay } from '../NoRowsOverlay';
 import Cookies from 'js-cookie'

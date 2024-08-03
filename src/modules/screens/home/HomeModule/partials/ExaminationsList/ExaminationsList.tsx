@@ -1,7 +1,7 @@
 'use client'
 import { Examination, useExaminations } from '@/packages/api';
 import { Box } from '@design';
-import { DataGrid, GridPaginationModel } from '@mui/x-data-grid';
+import { DataGrid, GridPaginationModel } from '@design';
 import { useEffect, useState } from 'react';
 
 const EXAMINATIONS_COLUMNS = [{

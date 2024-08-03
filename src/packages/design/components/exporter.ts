@@ -8,7 +8,8 @@ export type {
   Components, FormControlLabelProps, FormHelperTextProps,
 } from '@mui/material';
 
-export type { DataGridProps } from '@mui/x-data-grid';
+export type { DataGridProps, GridPaginationModel } from '@mui/x-data-grid';
+export { DataGrid } from '@mui/x-data-grid';
 
 export {
   Box,

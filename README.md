@@ -10,6 +10,59 @@ This repository contains the source code for the front-end of the COVID-19 Test 
 - React +18
 - Next +14 App Router
 
+## Technology Choices
+
+In implementing the solution for the COVID-19 Test Set project, the following technologies and tools were chosen for their specific benefits and capabilities:
+
+### 1. Next.js
+**Next.js** is the framework of choice for building the application. It provides a powerful set of features including server-side rendering (SSR), static site generation (SSG), and API routes. Next.js enhances performance, SEO, and scalability, making it an ideal choice for developing a modern web application.
+
+### 2. Husky
+**Husky** is used to enforce commit hooks and ensure code quality standards. By configuring Husky, we can automatically run linting, formatting, and testing scripts before commits and pushes, helping to maintain a clean and consistent codebase.
+
+### 3. Commitlint
+**Commitlint** is employed to enforce commit message conventions. By using Commitlint, we ensure that all commit messages follow a consistent format, such as Conventional Commits. This practice improves the readability of the project history and simplifies the generation of changelogs.
+
+### 4. CZ-Conventional-Changelog
+**CZ-Conventional-Changelog** (or Commitizen) is utilized for managing commit conventions and generating changelogs. It helps standardize commit messages according to the Conventional Commits specification, improving the clarity of project history.
+
+### 5. ESLint
+**ESLint** serves as the primary code linter for the project. It is used to identify and fix problems in JavaScript and TypeScript code, ensuring adherence to coding standards and best practices.
+
+### 6. Docker
+**Docker** is utilized for containerizing the application. Containerization ensures that the application runs consistently across different environments by packaging it with all its dependencies.
+
+### 7. pnpm
+**pnpm** is chosen as the package manager due to its efficient handling of dependencies. pnpm uses a unique approach to dependency management that results in faster installations and reduced disk space usage compared to other package managers.
+
+### 8. .env File
+Using a **.env** file helps manage environment variables in a centralized and secure manner, ensuring that sensitive configuration data is handled properly.
+
+### 9. TypeScript Configuration (tsconfig)
+**TypeScript Configuration (tsconfig)** is employed to use absolute paths for useful directories, simplifying module imports and improving code readability.
+
+### 10. Release It
+**Release It** is used for version management and automated releases, streamlining the release process by automating version bumps, changelog generation, and tagging.
+
+### 11. Zod
+**Zod** is used for schema validation and TypeScript type inference. It provides a robust and type-safe way to validate and parse data, ensuring that the application's data conforms to expected structures and types.
+
+### 12. React Hook Form
+**React Hook Form** is utilized for managing form state and validation. It simplifies form handling in React applications by providing a performant and intuitive API for working with form inputs and validations.
+
+### 13. next-i18next and i18n
+**next-i18next** and **i18n** are employed for internationalization and localization. They enable the application to support multiple languages by managing translations and locale-specific content, enhancing the user experience for a global audience.
+
+### 14. @tanstack/react-query and Axios
+**@tanstack/react-query** and **Axios** are used for data fetching and state management. React Query provides powerful data-fetching and caching capabilities, while Axios offers a straightforward and flexible HTTP client for making API requests.
+
+### 15. @mui/material
+**@mui/material** (Material-UI) is used for the UI kit, offering a comprehensive set of components and design elements based on Material Design principles. It ensures a consistent and modern user interface throughout the application.
+
+### 16. Sharp
+**Sharp** is used for image processing and compression. It efficiently handles image transformations, such as resizing and optimizing, to improve performance and reduce load times for users.
+
+
 ## Repository Structure
 
 The project is organized into 3 sepreated directories with related directories and modules, each module has its own `readme.md` file that provides specific documentation for that module. Below is an overview of the directory structure:

@@ -1,7 +1,6 @@
 
-import { H3 } from '@design';
-import { Container } from '@mui/material';
-import { DataGrid } from '@mui/x-data-grid';
+import { H3, Container } from '@design';
+import { DataGrid } from '@design';
 
 const EXAMINATIONS_COLUMNS = [{
     field: 'id',
