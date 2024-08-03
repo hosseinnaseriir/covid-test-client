@@ -18,7 +18,7 @@ export const MuiSelect: Components['MuiSelect'] = {
         border: `${theme.spacing(0.125)} solid ${theme.palette.grey[600]}`,
       },
       '&:focus-within': {
-        boxShadow: `0px 0px 0px 4px #F18E2E40`,
+        boxShadow: `0px 0px 0px 4px #95c9ff40`,
         border: `${theme.spacing(0.125)} solid ${theme.palette.primary.main}`,
       },
       '& .MuiSelect-icon': {

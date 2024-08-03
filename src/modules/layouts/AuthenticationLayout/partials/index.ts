@@ -1,2 +1,2 @@
 export * from './AuthSlider';
-export * from './LanguageChanger';
+export * from '../../../../packages/system/components/LanguageChanger';

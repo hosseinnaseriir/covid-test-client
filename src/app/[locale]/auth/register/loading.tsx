@@ -1,9 +1,9 @@
 import { SkeletonLoading } from "@design";
 
-const LoginLoading = () => {
+const RegisterLoading = () => {
     return (
         <SkeletonLoading />
     );
 }
 
-export default LoginLoading;
+export default RegisterLoading;

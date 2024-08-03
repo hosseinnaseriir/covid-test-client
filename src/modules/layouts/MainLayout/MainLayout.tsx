@@ -1,16 +1,20 @@
 import { Box, H1 } from '@design';
-import { ReactNode } from 'react';
-import { Appbar, MainSearch } from './partials';
+import { lazy, ReactNode, Suspense } from 'react';
+import { MainSearch } from './partials';
 import Image from 'next/image';
 import sliderBg from '@assets/images/slider-bg.jpg'
 import { LocalesType } from '@/packages/types';
+
+const Appbar = lazy(() => import('./partials/Appbar/Appbar'));
 
 const MainLayout = ({ children, locales }: { children: ReactNode, locales: LocalesType['locales'] }) => {
 
     return (
         <div>
             <header>
-                <Appbar />
+                <Suspense fallback={<></>}>
+                    <Appbar />
+                </Suspense>
                 <Box sx={{
                     position: 'relative'
                 }}>

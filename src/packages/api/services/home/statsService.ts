@@ -11,11 +11,6 @@ export interface Stats {
 
 type StatsResponse = Stats[];
 
-interface StatsQueryParams {
-    page: number;
-    limit: number;
-}
-
 /**
  * Fetch Stats with pagination
  * @summary Fetch Stats with pagination

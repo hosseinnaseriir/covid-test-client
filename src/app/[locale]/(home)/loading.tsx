@@ -1,5 +1,9 @@
+import { SkeletonLoading } from "@design";
+
 const HomePageLoading = () => {
-    return ("HomePageLoading");
+    return (
+        <SkeletonLoading />
+    );
 }
 
 export default HomePageLoading;

@@ -15,6 +15,7 @@ export const MuiAutoComplete: ForwardRefRenderFunction<
     field,
     error,
     helperText,
+    InputProps,
     ...restProps
   } = props;
   const customInputDemo = useId();
@@ -30,12 +31,13 @@ export const MuiAutoComplete: ForwardRefRenderFunction<
         size: 'small',
         color: 'primary',
       }}
-      value={props.value ?? field?.value ?? []}
+      value={props.value ?? field?.value ?? null}
       onChange={(_event, _value, reason) => {
         field
           ? field?.onChange(_value)
           : props.onChange?.(_event, _value, reason);
       }}
+      getOptionLabel={(option) => option.label || ''}
       isOptionEqualToValue={(option, _value) => {
         return option.id === _value.id;
       }}
@@ -49,7 +51,7 @@ export const MuiAutoComplete: ForwardRefRenderFunction<
           ref={params.InputProps.ref}
           type='text'
           {...params}
-          {...props.InputProps}
+          {...InputProps}
         />
       )}
     />
