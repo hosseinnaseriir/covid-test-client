@@ -9,5 +9,8 @@
     "register": "Register",
     "register_now": "Register Now!",
     "main_title": "COVID-19 Test Set Client",
-    "all_examinations": "Full list of examinations."
+    "all_examinations": "Full list of examinations.",
+    "search_with_location": "Search With Location-ID",
+    "please_login_stats": "Please login or register to view the examination stats.",
+    "examination_summary": "Eexamination stats summary"
 }

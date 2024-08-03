@@ -3,6 +3,7 @@ import { Stats, useStats } from '@/packages/api';
 import { DataGrid } from '@mui/x-data-grid';
 import { useEffect, useState } from 'react';
 import { NoRowsOverlay } from '../NoRowsOverlay';
+import Cookies from 'js-cookie'
 
 const STATS_COLUMNS = [{
     field: 'locationId',
@@ -24,13 +25,18 @@ const STATS_COLUMNS = [{
 
 export const StatsList = () => {
     const [rows, setRows] = useState<Stats[]>([]);
-    const { data: statsData, isPending } = useStats();
+    const isToken = !!Cookies.get(process.env.NEXT_PUBLIC_TOKEN_KEY!);
+
+    const { data: statsData, isLoading } = useStats({
+        enabled: isToken,
+    });
 
     useEffect(() => {
+        if (!isToken) return;
         if (statsData) {
-            // setRows(statsData);
+            setRows(statsData);
         };
-    }, [statsData]);
+    }, [isToken, statsData]);
 
     return (
         <DataGrid
@@ -41,7 +47,7 @@ export const StatsList = () => {
                 noRowsOverlay: NoRowsOverlay
             }}
             hideFooterPagination
-            loading={isPending}
+            loading={isLoading}
             rows={rows}
             columns={STATS_COLUMNS}
         />

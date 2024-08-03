@@ -4,10 +4,12 @@ import { AutoComplete } from '@design';
 import { SearchLineSvg } from '@icons/svgs';
 import { useLocations } from '@/packages/api';
 import { useMemo, useState } from 'react';
+import { useLocales } from '@/packages';
 
 export const MainSearch = () => {
 
-    const { data, isPending } = useLocations();
+    const locales = useLocales()
+    const { data, isLoading } = useLocations();
     const [selectedItem, setSelectedItem] = useState()
 
     const options = useMemo(() => {
@@ -28,15 +30,14 @@ export const MainSearch = () => {
             }
         }}>
             <AutoComplete
-                loading={isPending}
+                loading={isLoading}
                 fullWidth
                 value={selectedItem}
                 onChange={(_e, _value) => {
-                    console.log({ _value });
                     setSelectedItem(_value)
                 }}
                 InputProps={{
-                    placeholder: "Search With Location ID",
+                    placeholder: locales["search_with_location"],
                 }}
                 options={options} />
             <Button variant='contained' color='primary'>

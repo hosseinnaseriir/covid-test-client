@@ -6,7 +6,6 @@ import { LanguageChanger, AuthSlider } from './partials';
 import Link from 'next/link';
 
 const AuthenticationLayout = ({ children }: { children: ReactNode }) => {
-
     return (
         <Box
             sx={{
@@ -24,7 +23,7 @@ const AuthenticationLayout = ({ children }: { children: ReactNode }) => {
                         alignItems: 'center',
                     }}
                 >
-                    <Link href={"/"}>
+                    <Link href={`/`}>
                         <BrandPrimarySvg
                             sx={{
                                 fontSize: '4rem'

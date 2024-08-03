@@ -16,15 +16,6 @@ export const MuiTextField: Components['MuiTextField'] = {
       margin: 0,
       boxSizing: 'border-box',
       width: '100%',
-      // borderRadius: theme.spacing(1),
-      // border: `${theme.spacing(0.125)} solid ${theme.palette.grey[300]}`,
-      // '&:hover': {
-      //   border: `${theme.spacing(0.125)} solid ${theme.palette.grey[600]}`,
-      // },
-      // '&:focus-within': {
-      //   boxShadow: `0px 0px 0px 4px #F18E2E40`,
-      //   border: `${theme.spacing(0.125)} solid ${theme.palette.primary.main}`,
-      // },
       fieldset: {
         display: 'none',
       },

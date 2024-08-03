@@ -10,10 +10,7 @@ const MainLayout = ({ children, locales }: { children: ReactNode, locales: Local
     return (
         <div>
             <header>
-                <Appbar locales={{
-                    login: locales["login"],
-                    register: locales["register"]
-                }} />
+                <Appbar />
                 <Box sx={{
                     position: 'relative'
                 }}>

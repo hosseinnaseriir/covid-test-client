@@ -5,7 +5,7 @@ import { useRoutes } from '@routes';
 import { LocalesType } from '@/packages/types';
 
 const LoginModule = ({ locales }: LocalesType) => {
-    const { register, onSubmitLogin, isValid, errors, isPending } = useLoginModule();
+    const { register, onSubmitLogin, isValid, errors, isLoading } = useLoginModule();
     const ROUTES = useRoutes();
 
     return (
@@ -45,7 +45,7 @@ const LoginModule = ({ locales }: LocalesType) => {
                 <Button
                     disabled={isValid}
                     type='submit'
-                    loading={isPending}
+                    loading={isLoading}
                     variant='contained'
                     color='primary'
                 >

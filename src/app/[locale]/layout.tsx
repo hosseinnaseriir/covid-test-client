@@ -1,12 +1,12 @@
 import { theme } from "@/packages/design";
-import { Experimental_CssVarsProvider, experimental_extendTheme } from "@mui/material";
+import { Experimental_CssVarsProvider } from "@mui/material";
 import { AppRouterCacheProvider } from "@mui/material-nextjs/v13-appRouter";
 import type { Metadata } from "next";
 import { Inter } from 'next/font/google'
 import './globals.css'
-import ReactQueryProvider from "@/packages/system/providers/ReactQueryProvider/ReactQueryProvider";
 import { Toaster } from 'react-hot-toast';
 import { initTranslations } from "@/packages";
+import ReactQueryProvider from "@/packages/system/providers/ReactQueryProvider/ReactQueryProvider";
 import MainContextProvider from "@/packages/contexts/MainContextProvider";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -17,15 +17,15 @@ export const metadata: Metadata = {
 
 export default async function RootLayout({
   children,
-  params: { locale }
+  params,
 }: Readonly<{
   children: React.ReactNode;
   params: { locale: string }
 }>) {
-  const { t } = await initTranslations(locale, ['default']);
+  const { t } = await initTranslations(params.locale, ['default']);
 
   return (
-    <html lang={locale ?? "en"}>
+    <html lang={params.locale ?? "en"}>
       <link rel="icon" href="/covid-test.svg" sizes="any" />
       <body className={`${inter.className}`}>
         <AppRouterCacheProvider>
@@ -38,6 +38,8 @@ export default async function RootLayout({
               <MainContextProvider locales={{
                 register: t("register"),
                 login: t("login"),
+                search_with_location: t("search_with_location"),
+                please_login_stats: t("please_login_stats")
               }}>
                 {children}
               </MainContextProvider>

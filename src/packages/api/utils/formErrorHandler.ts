@@ -1,4 +1,3 @@
-// import { FieldPath, FieldValues, UseFormSetError } from 'react-hook-form';
 
 import { FieldValues, UseFormSetError } from "react-hook-form";
 import { ErrorType, ResponseErrorResponse, ValidationErrorResponse } from "../types";

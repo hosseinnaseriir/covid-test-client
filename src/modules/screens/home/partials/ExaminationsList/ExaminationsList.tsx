@@ -30,7 +30,7 @@ export const ExaminationsList = () => {
         pageSize: 10,
     });
 
-    const { data: examinationsData, isPending } = useExaminations({
+    const { data: examinationsData, isLoading } = useExaminations({
         limit: paginationModel.pageSize,
         page: paginationModel.page + 1
     });
@@ -45,18 +45,20 @@ export const ExaminationsList = () => {
     }, [examinationsData, rowsCount]);
 
     return (
-      
-            <DataGrid
-                loading={isPending}
-                rowCount={100}
-                paginationModel={paginationModel}
-                onPaginationModelChange={(model) => {
-                    setPaginationModel(model);
-                }}
-                paginationMode='server'
-                rows={rows}
-                columns={EXAMINATIONS_COLUMNS}
-            />
+        <DataGrid
+            style={{
+                minHeight: "30rem"
+            }}
+            loading={isLoading}
+            rowCount={100}
+            paginationModel={paginationModel}
+            onPaginationModelChange={(model) => {
+                setPaginationModel(model);
+            }}
+            paginationMode='server'
+            rows={rows}
+            columns={EXAMINATIONS_COLUMNS}
+        />
 
     );
 }

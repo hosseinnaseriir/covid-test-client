@@ -33,7 +33,7 @@ export const useRegisterModule = () => {
   const router = useRouter()
   const ROUTES = useRoutes();
 
-  const { mutate: verifyUserMutate, isPending } = useRegisterUser({
+  const { mutate: verifyUserMutate, isPending: isLoading } = useRegisterUser({
     mutation: {
       onError(ex) {
         formErrorHandler({
@@ -62,7 +62,7 @@ export const useRegisterModule = () => {
     register,
     setError,
     onSubmitRegister,
-    isPending,
+    isLoading,
     isValid: !isDirty || !isValid,
   };
 };

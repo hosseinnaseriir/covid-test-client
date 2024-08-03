@@ -7,5 +7,10 @@
     "login": "Anmelden",
     "or": "oder",
     "register": "Registrieren",
-    "register_now": "Jetzt registrieren!"
+    "register_now": "Jetzt registrieren!",
+    "main_title": "COVID-19 Testset-Client",
+    "all_examinations": "Vollständige Liste der Prüfungen.",
+    "search_with_location": "Suche mit Standort-ID",
+    "please_login_stats": "Bitte melden Sie sich an oder registrieren Sie sich, um die Prüfstatistiken anzuzeigen.",
+    "examination_summary": "Prüfungsstatistik Zusammenfassung"
 }
